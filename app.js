@@ -6,7 +6,8 @@ const mongoose = require('mongoose')
 
 //Importing Routes
 const productRoutes = require('./api/routes/product');
-const orderRoutes = require('./api/routes/order')
+const orderRoutes = require('./api/routes/order');
+const userRoutes = require('./api/routes/user');
 
 //mongoose
 mongoose.set("strictQuery", false);
@@ -43,6 +44,7 @@ app.use((req, res, next) => {
 //Providing Routes
 app.use('/products', productRoutes);
 app.use('/orders',orderRoutes);
+app.use('/user',userRoutes);
 
 //Error handling
 app.use((req, res, next) => {
